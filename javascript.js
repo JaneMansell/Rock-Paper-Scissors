@@ -62,8 +62,9 @@ function game() {
     let message;
     let playerScore = 0;
     let computerScore = 0;
+    winningScore = 2;
 
-    while (playerScore < 5 && computerScore < 5) {
+    while (playerScore < winningScore && computerScore < winningScore) {
     
         playerSelection = prompt("Choose rock, paper or scissors.");
         computerSelection = getComputerChoice();
@@ -84,10 +85,10 @@ function game() {
         console.log(message);
     }
     
-    if (computerScore === 5) {
+    if (computerScore === winningScore) {
         message = "Sorry, you lost overall!";
     }
-    else if (playerScore === 5) {
+    else if (playerScore === winningScore) {
         message = "Congratulations, you are the overall winner!";
     }
     else{
