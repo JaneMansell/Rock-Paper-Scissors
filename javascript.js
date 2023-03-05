@@ -60,33 +60,38 @@ function game() {
     let playerSelection;
     let computerSelection;
     let message;
-    let score = 0;
-    for (let i=0; i<5; i++) {
+    let playerScore = 0;
+    let computerScore = 0;
+
+    while (playerScore < 5 && computerScore < 5) {
+    
         playerSelection = prompt("Choose rock, paper or scissors.");
         computerSelection = getComputerChoice();
         result = playRound(playerSelection,computerSelection);
         switch (result) {
             case 1:
                 message = "You win! " + playerSelection + " " + "beats " + computerSelection;
+                playerScore++;
                 break;
             case -1:
                 message = "You lose! " + computerSelection + " " + "beats " + playerSelection;
+                computerScore++;
                 break; 
             default:
                 message = "No winner! We both chose " + playerSelection;
         }
-        score = score + result;
+    
         console.log(message);
-
     }
-    if (score<0) {
+    
+    if (computerScore === 5) {
         message = "Sorry, you lost overall!";
     }
-    else if (score>0) {
+    else if (playerScore === 5) {
         message = "Congratulations, you are the overall winner!";
     }
     else{
-        message = "It's a draw!";
+        message = "Something has gone wrong";
     }
     console.log(message);
 }
