@@ -6,16 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-paper-scissors Game</title>
     <link rel ="icon" href="./images/favicon.ico"/>
-    <script src = "javascript.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Zeyada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-    <h1>Choose rock, paper or scissors</h1>
-    <div class = "results">Results</div>
-    <div class = "buttonContainer">
-        <button id = "btn">Rock</button>
-        <button id = "btn">Paper</button>
-        <button id = "btn">Scissors</button>
+    <div class = "resultsBlock">
+    <div class = "results">
+        <div >
+            <div>You</div>
+            <div class = "playerResults">0</div>
+        </div>
+        <div class = "vs">VS</div>
+        <div >
+            <div>Computer</div>
+            <div class = "computerResults">0</div>
+        </div>        
     </div>
-    
+    <div>First to 5 is the winner!</div>
+    </div>
+    <div class = "choicesContainer">
+        <div>Choose rock, paper or scissors</div>
+            <div class = "buttonContainer">
+                <button id = "rock"><img src = "./images/rock.png"></button>
+                <button id = "paper"><img src = "./images/paper.png"></button>
+                <button id = "scissors"><img src = "./images/scissors.png"></button>
+            </div>
+    </div>
+    <script src = "javascript.js" defer></script>
 </body>
 </html>

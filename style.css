@@ -1,0 +1,60 @@
+body {
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 60px;
+    font-family: Zeyada, sans-serif;
+}
+
+.results {
+    flex:1;
+    display:flex;
+    justify-content: space-evenly;
+    background-color: lightgrey;
+    padding: 30px;
+    margin-bottom: auto;
+}
+
+.vs {
+    align-self: center;
+    background-color: rgb(88, 87, 87);
+    color: orange;
+    font-size: 120px;
+}
+
+.resultsMessage {
+    font-size: smaller;
+    
+}
+
+.choicesContainer {
+    flex:1;
+    background-color: orange;
+    padding: 60px;
+    display:flex;
+    flex-direction: column;
+
+}
+.buttonContainer {
+    display:flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    
+}
+
+button {
+    display:flex;
+    flex: 1;
+    background-color: white;
+    justify-content: center;
+    align-content: center;
+    width: 95px;
+    padding: 30px;
+    transition: all .07s ease;
+}
+
+img {
+    width: 90px;
+    height: auto;
+}

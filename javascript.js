@@ -17,7 +17,7 @@ function getComputerChoice() {
 }
 
 function playRound (playerSelection,computerSelection){
-    playerSelection = playerSelection.toLowerCase();
+    
     if (playerSelection === "rock") {
         if (computerSelection === "paper"){
             return (-1);
@@ -56,45 +56,88 @@ function playRound (playerSelection,computerSelection){
     }
 }
 
-function game() {
-    let playerSelection;
+function game(playerSelection) {
+    
     let computerSelection;
     let message;
-    let playerScore = 0;
-    let computerScore = 0;
-    winningScore = 2;
+    
+    winningScore = 5;
+    let newPlayerScore =0;
+    let newComputerScore =0;
 
-    while (playerScore < winningScore && computerScore < winningScore) {
-    
-        playerSelection = prompt("Choose rock, paper or scissors.");
-        computerSelection = getComputerChoice();
-        result = playRound(playerSelection,computerSelection);
-        switch (result) {
-            case 1:
-                message = "You win! " + playerSelection + " " + "beats " + computerSelection;
-                playerScore++;
-                break;
-            case -1:
-                message = "You lose! " + computerSelection + " " + "beats " + playerSelection;
-                computerScore++;
-                break; 
-            default:
-                message = "No winner! We both chose " + playerSelection;
-        }
-    
-        console.log(message);
+    computerSelection = getComputerChoice();
+    result = playRound(playerSelection,computerSelection);
+    switch (result) {
+        case 1:
+            message = "Computer chose " + computerSelection + " so you win! " + playerSelection + " " + "beats " + computerSelection;
+            newPlayerScore++;
+            break;
+        case -1:
+            message = "Computer chose " + computerSelection + " so you lose! " + computerSelection + " " + "beats " + playerSelection;
+            newComputerScore++;
+            break; 
+        default:
+            message = "No winner! We both chose " + playerSelection;
     }
-    
-    if (computerScore === winningScore) {
+
+    console.log(message);
+    // Add message to webpage
+    const resultsBlock = document.querySelector('.resultsBlock');
+    if (document.querySelector('.resultsMessage') !== 'null') {
+        resultsBlock.removeChild(resultsBlock.lastChild);
+    }
+    const resultsMessage = document.createElement('div');
+    resultsMessage.classList.add('resultsMessage');
+    resultsMessage.textContent = message;
+    resultsBlock.appendChild(resultsMessage);
+
+    let playerResults = document.querySelector('.playerResults');
+    let oldPlayerResult = parseInt(playerResults.textContent);
+    let newPlayerResult = oldPlayerResult + newPlayerScore;
+    playerResults.textContent = newPlayerResult;
+
+    let computerResults = document.querySelector('.computerResults');
+    let oldComputerResult = parseInt(computerResults.textContent);
+    let newComputerResult = oldComputerResult + newComputerScore;
+    computerResults.textContent = newComputerResult;
+
+    console.log(newPlayerResult, newComputerResult);
+
+    function winningMessage(message) {
+        const finalResultMessage = document.createElement('div');
+        finalResultMessage.classList.add('finalResultMessage');
+        finalResultMessage.textContent = message;
+        resultsBlock.appendChild(finalResultMessage);
+    }
+  
+    if (newComputerResult === winningScore) {
+        //const finalResultMessage = document.createElement('div');
+        //finalResultMessage.classList.add('resultsMessage');
         message = "Sorry, you lost overall!";
+        winningMessage(message);
+        //finalResultMessage.textContent = message;
+        //resultsBlock.appendChild(finalResultMessage);
+        
     }
-    else if (playerScore === winningScore) {
+    else if (newPlayerResult === winningScore) {
+        //const finalResultMessage = document.createElement('div');
+        //finalResultMessage.classList.add('resultsMessage');
         message = "Congratulations, you are the overall winner!";
-    }
-    else{
-        message = "Something has gone wrong";
+        winningMessage(message);
+        //finalResultMessage.textContent = message;
+        //resultsBlock.appendChild(finalResultMessage);
+        
     }
     console.log(message);
 }
 
-game();
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click',() => {
+        game(button.id);
+    });
+});
+
+
+
