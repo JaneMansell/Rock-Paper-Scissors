@@ -135,24 +135,19 @@ function activateReplay() {
     });
 }
 
-function removeListener(playButtons) {
-    playButtons.forEach((button) => {
-        button.removeEventListener('click',() => {
-            game(button.id);
-        });
-    });
-    console.log("event listneer disabled");
+function listener() {
+    game(this.id);   
 }
 
+function removeListener(playButtons) {
+    playButtons.forEach((button) => {
+        button.removeEventListener('click', listener);
+    });
+    console.log("event listener disabled");
+}
 
 const playButtons = document.querySelectorAll('.playButton');
 playButtons.forEach((button) => {
-    button.addEventListener('click',() => {
-        game(button.id);
-    });
+    button.addEventListener('click', listener);
 });
-
-
-
-
 
