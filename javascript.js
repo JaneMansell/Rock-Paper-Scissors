@@ -108,36 +108,51 @@ function game(playerSelection) {
         finalResultMessage.classList.add('finalResultMessage');
         finalResultMessage.textContent = message;
         resultsBlock.appendChild(finalResultMessage);
+        const replay = document.createElement('button');
+        replay.classList.add('replayButton');
+        replay.textContent = "Click to play again";
+        finalResultMessage.appendChild(replay);
+        removeListener(playButtons);
+        activateReplay();
     }
-  
+ 
     if (newComputerResult === winningScore) {
-        //const finalResultMessage = document.createElement('div');
-        //finalResultMessage.classList.add('resultsMessage');
         message = "Sorry, you lost overall!";
         winningMessage(message);
-        //finalResultMessage.textContent = message;
-        //resultsBlock.appendChild(finalResultMessage);
-        
-    }
+        }
     else if (newPlayerResult === winningScore) {
-        //const finalResultMessage = document.createElement('div');
-        //finalResultMessage.classList.add('resultsMessage');
         message = "Congratulations, you are the overall winner!";
         winningMessage(message);
-        //finalResultMessage.textContent = message;
-        //resultsBlock.appendChild(finalResultMessage);
-        
-    }
+        }
     console.log(message);
 }
 
+function activateReplay() {
+    const replayButton = document.querySelector('.replayButton');
+    replayButton.addEventListener('click',() => {
+        console.log("Should be reloading");
+        location.reload();
+    });
+}
 
-const buttons = document.querySelectorAll('button');
-buttons.forEach((button) => {
+function removeListener(playButtons) {
+    playButtons.forEach((button) => {
+        button.removeEventListener('click',() => {
+            game(button.id);
+        });
+    });
+    console.log("event listneer disabled");
+}
+
+
+const playButtons = document.querySelectorAll('.playButton');
+playButtons.forEach((button) => {
     button.addEventListener('click',() => {
         game(button.id);
     });
 });
+
+
 
 
 

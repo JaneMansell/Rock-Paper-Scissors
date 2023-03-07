@@ -5,6 +5,13 @@ body {
     justify-content: space-between;
     font-size: 60px;
     font-family: Zeyada, sans-serif;
+    background-color: lightgrey;
+}
+
+.resultsBlock {
+    display:flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .results {
@@ -18,14 +25,17 @@ body {
 
 .vs {
     align-self: center;
-    background-color: rgb(88, 87, 87);
     color: orange;
     font-size: 120px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 .resultsMessage {
     font-size: smaller;
-    
+    color:lightgrey;
+    background-color: rgb(88, 87, 87);
+    align-self: stretch;
 }
 
 .choicesContainer {
@@ -57,4 +67,23 @@ button {
 img {
     width: 90px;
     height: auto;
+}
+
+.finalResultMessage {
+    color: orange;
+    background-color:rgb(88, 87, 87);
+    text-align: center;
+    
+}
+
+.replayButton {
+    
+    background-color: lightgrey;
+    /*font-family: Zeyada, sans-serif;
+    font-size: larger;*/
+    font-style: italic;
+    float: right;
+    
+
+    
 }
