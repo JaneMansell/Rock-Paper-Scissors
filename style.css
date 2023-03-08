@@ -13,7 +13,7 @@ body {
     flex:1;
     display:flex;
     flex-direction: column;
-    align-items: stretch;
+    /*align-items: stretch;*/
     min-height: 0;
 }
 
@@ -42,7 +42,6 @@ body {
     font-size: smaller;
     color:lightgrey;
     background-color: rgb(88, 87, 87);
-    align-self: stretch;
     flex: 1;
     min-height: 0;
 }
@@ -77,29 +76,28 @@ button {
 }
 
 img {
-    
     width: 90px;
-    
     height: auto;
-    
+}
+
+.finalResultBlock{
+    display:flex;
+    background-color:rgb(88, 87, 87);
 }
 
 .finalResultMessage {
     color: orange;
     background-color:rgb(88, 87, 87);
     text-align: center;
-    flex: 1;
-    min-height: 0;
+    flex: 3; 
 }
 
-.replayButton {
-    
+.replayButton {    
     background-color: lightgrey;
-    /*font-family: Zeyada, sans-serif;
-    font-size: larger;*/
+    font-family: Zeyada, sans-serif;
+    font-weight: bold;
     font-style: italic;
     float: right;
     width:25%;
-    padding: 10px;
-    
+    padding: 10px;    
 }

@@ -104,14 +104,17 @@ function game(playerSelection) {
     console.log(newPlayerResult, newComputerResult);
 
     function winningMessage(message) {
+        const finalResultBlock = document.createElement('div');
+        finalResultBlock.classList.add('finalResultBlock');
+        resultsBlock.appendChild(finalResultBlock);
         const finalResultMessage = document.createElement('div');
         finalResultMessage.classList.add('finalResultMessage');
         finalResultMessage.textContent = message;
-        resultsBlock.appendChild(finalResultMessage);
+        finalResultBlock.appendChild(finalResultMessage);
         const replay = document.createElement('button');
         replay.classList.add('replayButton');
         replay.textContent = "Click to play again";
-        finalResultMessage.appendChild(replay);
+        finalResultBlock.appendChild(replay);
         removeListener(playButtons);
         activateReplay();
     }
