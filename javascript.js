@@ -83,6 +83,8 @@ function game(playerSelection) {
     console.log(message);
     // Add message to webpage
     const resultsBlock = document.querySelector('.resultsBlock');
+    resultsBlock.setAttribute('id','resultsBlockNew');
+    
     if (document.querySelector('.resultsMessage') !== 'null') {
         resultsBlock.removeChild(resultsBlock.lastChild);
     }

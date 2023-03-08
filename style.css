@@ -1,5 +1,5 @@
 body {
-    height: 95vh;
+    height: 97vh;
     text-align: center;
     display:flex;
     flex-direction: column;
@@ -14,12 +14,19 @@ body {
     display:flex;
     flex-direction: column;
     /*align-items: stretch;*/
-    min-height: 0;
+    min-height: 50vh;
+    font-size: 7vw;
+}
+
+#resultsBlockNew {
+    min-height: 70vh;
+    font-size: 4vw;
+
 }
 
 .results {
     flex:1;
-    min-height: 0;
+    min-height: 20vh;
     display:flex;
     justify-content: space-evenly;
     background-color: lightgrey;
@@ -31,7 +38,7 @@ body {
 .vs {
     flex: 1;
     min-height: 0;
-    align-self: center;
+    align-self: flex-start;
     color: orange;
     font-size: 200%;
     padding-left: 60px;
@@ -43,16 +50,18 @@ body {
     color:lightgrey;
     background-color: rgb(88, 87, 87);
     flex: 1;
-    min-height: 0;
+    min-height: 10vh;
 }
 
 .choicesContainer {
     flex:1;
+    height:25vh;
     min-height: 0;
     background-color: orange;
     padding: 10px;
     display:flex;
     flex-direction: column;
+    font-size: 4vh;
 
 }
 .buttonContainer {
@@ -83,13 +92,16 @@ img {
 .finalResultBlock{
     display:flex;
     background-color:rgb(88, 87, 87);
+    min-height: 10vh; 
+    flex:1;
 }
 
 .finalResultMessage {
     color: orange;
     background-color:rgb(88, 87, 87);
     text-align: center;
-    flex: 3; 
+    flex: 3;
+   
 }
 
 .replayButton {    
