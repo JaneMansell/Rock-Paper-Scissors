@@ -1,9 +1,10 @@
 body {
+    height: 95vh;
     text-align: center;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    font-size: 60px;
+    font-size: 40px;
     font-family: Zeyada, sans-serif;
     background-color: lightgrey;
 }
@@ -13,21 +14,26 @@ body {
     display:flex;
     flex-direction: column;
     align-items: stretch;
+    min-height: 0;
 }
 
 .results {
     flex:1;
+    min-height: 0;
     display:flex;
     justify-content: space-evenly;
     background-color: lightgrey;
-    padding: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
     margin-bottom: auto;
 }
 
 .vs {
+    flex: 1;
+    min-height: 0;
     align-self: center;
     color: orange;
-    font-size: 120px;
+    font-size: 200%;
     padding-left: 60px;
     padding-right: 60px;
 }
@@ -37,12 +43,15 @@ body {
     color:lightgrey;
     background-color: rgb(88, 87, 87);
     align-self: stretch;
+    flex: 1;
+    min-height: 0;
 }
 
 .choicesContainer {
     flex:1;
+    min-height: 0;
     background-color: orange;
-    padding: 60px;
+    padding: 10px;
     display:flex;
     flex-direction: column;
 
@@ -51,30 +60,36 @@ body {
     display:flex;
     justify-content: space-evenly;
     gap: 30px;
-    
+    flex: 1;
+    min-height: 0;
 }
 
 button {
-    display:flex;
     flex: 1;
+    min-height: 0;
     background-color: white;
     justify-content: center;
     align-content: center;
     width: 95px;
-    padding: 30px;
+    padding: 0px;
+    margin: 10px;
     transition: all .07s ease;
 }
 
 img {
+    
     width: 90px;
+    
     height: auto;
+    
 }
 
 .finalResultMessage {
     color: orange;
     background-color:rgb(88, 87, 87);
     text-align: center;
-    
+    flex: 1;
+    min-height: 0;
 }
 
 .replayButton {
@@ -84,7 +99,7 @@ img {
     font-size: larger;*/
     font-style: italic;
     float: right;
-    
-
+    width:25%;
+    padding: 10px;
     
 }
